@@ -1,0 +1,29 @@
+html{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+	flex: 0 0 auto;
+}
+
+.main-content {
+	flex: 1 0 auto;
+}
+
+.copyright {
+	color:#212529;
+}
+
+.bawah {
+	flex: 0 0 auto;
+}
+
+.sembunyi{
+	display:none;
+}

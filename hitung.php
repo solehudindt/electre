@@ -50,10 +50,9 @@
 			  <table class="table">	
 					<tr>
 						<td></td>
-						<td>KOMPETENSI</td>
-						<td>KETRAMPILAN</td>
-						<td>MOTIVASI</td>
-						<td>SIKAP</td>
+						<td>EKONOMI</td>
+						<td>TANGGUNGAN</td>
+						<td>USIA</td>
 					</tr>
 					<?php for($i=1;$i<=$baris+1;$i++): ?>
 						<tr>					

@@ -10,14 +10,15 @@
 		';		
 		exit;
 	}
-	
 	$baris = $_SESSION['baris'];
 	$kolom = 3;
-	$w = $_POST['w'];
+	$w = array("11" => "5",
+			   "12" => "3",
+			   "13" => "2",
+			);
 	$cel = $_POST['cel'];
 	$normal = $cel;
-	$options = $_POST['options'];
-
+	$options = 1;
 	$hasil = 0;
 	$jumCon = 0;
 	$jumDis = [];
@@ -25,6 +26,7 @@
 	$totDes = 0;
 	$rata2 = 0;
 	$ranking = [];	
+	$nama = "";
 
 ?>
 <!DOCTYPE html>
@@ -67,7 +69,7 @@
 									</td>						
 								<?php elseif($i==$baris+1): ?>
 									<td>							
-										<?= $w["1$k"] ?>	
+										<?= $w["1$k"] ?>
 									</td>
 								<?php else: ?>
 									<td>							
@@ -321,30 +323,25 @@
 		</div>		
 		<!-- INI UNTUK RANKING -->		
 		<?php $ranking = $rata ?>
-		<?php if($options == 1): ?>
-			<?php rsort($ranking) ?>
-		<?php else: ?>
-			<?php sort($ranking) ?>
-		<?php endif ?>
+		<?php $nilai = array(); 
+			$data = []?>
 		<table class="table table-bordered">
 			<tr>
-				<th>RANKING</th>
+				<th>NO.</th>
 				<th>NAMA</th>
 				<th>NILAI</th>
 			</tr>
 			<?php for($i=0;$i<$baris;$i++): ?>
 				<tr>
 					<td><?= $i+1 ?></td>
-					<td>
-						<?php for($k=0;$k<$baris;$k++): ?>
-							<?php if($rata[$i] == $ranking[$k]): ?>
-								<?= $_SESSION['n'][$k] ?>
-							<?php endif ?>
-						<?php endfor; ?>
-					</td>
-					<td><?= number_format($ranking[$i]/array_sum($ranking),2) ?></td>
+						<?php
+							array_push($data, $_SESSION['n'][$i]);
+							var_dump($data);
+						?>
+					<td><? array_push($nilai, number_format($ranking[$i]/array_sum($ranking),2)); ?></td>
 				</tr>
 			<?php endfor ?>
+			<?php var_dump($nilai) ?>
 		</table>
 		<a href="hapus.php" class="btn btn-dark btn-block btn-lg active" role="button" aria-pressed="true">ULANGI</a>
 		</div>		

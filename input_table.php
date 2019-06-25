@@ -26,6 +26,8 @@
 	<?php include 'header.html'; ?>
 	<section class="main-content">
 		<div class="container">
+		
+		<!-- menentukan baris -->
 		<?php if(isset($_SESSION['baris'])): ?>
 			<div class="form-group">
 				<div class="col-xs">
@@ -45,7 +47,7 @@
 							<?php for($k=0;$k<=3;$k++): ?>							
 								<?php if($i==$baris+1 && $k==0): ?>
 									<td>
-										BOBOT
+										
 									</td>								
 								<?php elseif($k==0): ?>							
 									<td>
@@ -53,7 +55,7 @@
 									</td>						
 								<?php elseif($i==$baris+1): ?>
 									<td>							
-										<input type="text" class="form-control" name='w[<?= "1$k" ?>]' required>	
+										<input type="hidden" class="form-control" name='x[<?= "1$k" ?>]' required>	
 									</td>
 								<?php else: ?>
 									<td>							
@@ -65,14 +67,7 @@
 						</tr>	
 					<?php endfor; ?>				
 				</table>	
-				<div class="btn btn-group-toggle btn-block" data-toggle="buttons">
-					<label class="btn btn-secondary active">
-				  		<input type="radio" name="options" id="option1" value="1" checked> Benefit
-				  	</label>
-				  	<label class="btn btn-secondary">
-				    	<input type="radio" name="options" id="option2" value="2"> Cost
-				  	</label>				  	
-				</div>				
+			
 				<button type="submit" class="btn btn-dark btn-block" name="submit">SUBMIT</button>
 			</form>
 				</div>				

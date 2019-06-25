@@ -337,9 +337,9 @@
 					<td><?= $i+1 ?></td>
 					<td>
 						<?php for($k=0;$k<$baris;$k++): ?>
-							<?php if($rata[$i] == $ranking[$k]): ?>
-								<?= $_SESSION['n'][$k] ?>
-							<?php endif ?>
+							<?php if($rata[$i] == $ranking[$k]){
+								echo $_SESSION['n'][$k];
+							} ?>
 						<?php endfor; ?>
 					</td>
 					<td><?= number_format($ranking[$i]/array_sum($ranking),2) ?></td>

@@ -54,7 +54,7 @@
 			<br>
 			<!-- Modal -->
 			<div class="collapse" id="exampleModal">
-        		<h5 id="exampleModalLabel">Jumlah Alternatif</h5>
+					<h5 id="exampleModalLabel">Jumlah Alternatif</h5>
 				    <form class="text-center" method="POST" action="">			
 						<input type="text" class="form-control" name="baris" placeholder="jumlah baris" required>
 							<br>
